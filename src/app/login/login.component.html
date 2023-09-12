@@ -1,0 +1,107 @@
+<div class="login-page">
+    <div class="container-fluid">
+        <form [formGroup]="formUser">
+            <div class="row">
+                <div class="col-md-6 align-self-center text-center">
+                    <div class="login-form mx-auto">
+                        <div class="logo-text">
+                            <img
+                              src="../../assets/img/logo-merce.png"
+                              alt="logo"
+                              class="img-fluid"
+                            />
+                          </div>
+                          <p class="mt-5 mb-5 fs-20 primary-dark-text">
+                            Sign In with your Merce Account
+                          </p>
+                        <div class="input-user mb-3">
+                            <input type="text" placeholder="Email"
+                                class="form-control fs-15 fw-bold br-10 input-border" formControlName="email" />
+                            <div *ngIf="
+                formUser.controls['email'].touched &&
+                formUser.controls['email'].invalid
+              " class="text-danger">
+                                <div *ngIf="formUser.controls['email'].errors?.['required']" class="d-flex">
+                                    <p class="fs-13 fw-400 ms-1 mt-1">Email is required*</p>
+                                </div>
+                                <div *ngIf="formUser.controls['email'].errors?.['pattern']"
+                                    class="d-flex align-items-baseline">
+                                    <p class="fs-13 fw-400 ms-1 mt-1">
+                                        Email is Invalid
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="input-password mb-3">
+                            <input type="password" placeholder="password"
+                                class="form-control br-10 fs-15 fw-bold input-border"
+                                name="password" formControlName="password" value={localStorage.getItem(password)} />
+                            <div *ngIf="
+                formUser.controls['password'].touched &&
+                formUser.controls['password'].invalid
+              " class="text-danger">
+                                <div *ngIf="formUser.controls['password'].errors?.['required']" class="d-flex">
+                                    <p class="fs-13 fw-400 ms-1 mt-1">Password is required*</p>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div
+                        class="mb-5 checkbox-forgot-pswd d-flex justify-content-between align-items-center"
+                       >
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="rememberMe" 
+                            
+                          />
+                          <label class="form-check-label" for="Rememberme">
+                            Remember Me 
+                          </label>
+                        </div>
+                        <div>
+                          <a routerLink="/forgot-password" class="text-decoration-none btn-primary-text">
+                            Forgot Password
+                          </a>
+                        </div>
+                      </div>
+                        <div class="btn-login d-grid">
+                            <button (click)="login()" type="button" class="btn btn-primary mb-4">
+                                Login
+                            </button>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-5 hr"></div>
+                            <div class="col-2 text-center mt-2">OR</div>
+                            <div class="col-5 hr"></div>
+                        </div>
+
+                        <div class="btn-login d-grid">
+                            <button type="button" routerLink="/login-with-otp"
+                                class="btn btn-primary-border btn-primary-outline mt-4">
+                                Login with OTP
+                            </button>
+                            <br />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 px-0 d-none d-md-block">
+                    <div class="bg-img">
+                      <img
+                        src="../../assets/img/merce.jpg"
+                        alt=""
+                        class="img-fluid h-100vh w-100 of-cover"
+                      />
+                    </div>
+                  </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+

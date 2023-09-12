@@ -1,0 +1,22 @@
+<div *ngIf="isLoggedIn()" class="head-area">
+    <div class="header-container">
+      <div class="logo">
+        <a class="navbar-brand" href="#">
+            <img src="../../assets/img/logo-merce.png"  height="30" class="d-inline-block align-top" alt="">
+            
+          </a>
+      </div>
+      <div class="mobile-nav">
+        <i class="fas fa-bars"></i>
+      </div>
+      <div class="menu">
+        <ul class="menu1">
+          <li><a [routerLink]="'/login'" class="fw-bold">Login</a></li>
+          <li><a [routerLink]="'/angular-tables'" class="fw-bold">Datatables</a></li>
+          <li><a [routerLink]="'/charts'" class="fw-bold">Chart</a></li>
+        </ul>
+         </div>
+    </div>
+     
+</div>
+<router-outlet></router-outlet>

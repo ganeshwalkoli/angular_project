@@ -1,0 +1,71 @@
+<div class="login-page">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6 align-self-center text-center">
+          <div class="login-form mx-auto">
+            <div class="logo-text">
+              <img src="../../assets/img/logo-merce.png" alt="logo" class="img-fluid" routerLink="/login" />
+            </div>
+  
+            <p class="mt-5 mb-5 fs-20 primary-dark-text">
+                You will get a OTP via SMS on
+            </p>
+            <form class="row" [formGroup]="otpVerifyForm">
+              <div class="input-password mb-5">
+                <input type="text" formControlName="otp" placeholder="Enter OTP"
+                  class="form-control br-10 fs-15 fw-bold input-border" name="OTP" />
+                <div *ngIf="submitted && f['otp'].errors" class="text-start">
+                  <div *ngIf="f['otp'].errors['required']" class="d-flex failed-text align-items-baseline">
+                    <p class="mt-2 mx-1 fs-12 fw-400">
+                      OTP required
+                    </p>
+                  </div>
+                  <div *ngIf="f.otp.errors?.pattern" class="d-flex failed-text align-items-baseline">
+                    <p class="mt-2 mx-1 fs-12 fw-400">
+                      Valid OTP Number
+                    </p>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="btn-login d-grid">
+                <!-- routerLink="/dashboard" -->
+                <button  type="button" class="btn btn-primary mb-4">
+                  Verify OTP
+                </button>
+              </div>
+  
+              <div class="text-end mb-3">
+                <div>
+                  <a class="text-decoration-none text-color-dark">Did not get OTP?
+                    <span  class="pointer btn-primary-text">Resend Otp</span></a>
+                </div>
+                <div>
+                  <a class="text-decoration-none btn-primary-text" routerLink="/login-with-otp">Try a different
+                    number?</a>
+                </div>
+              </div>
+  
+              <div class="row">
+                <div class="col-5 hr"></div>
+                <div class="col-2 text-center mt-2">OR</div>
+                <div class="col-5 hr"></div>
+              </div>
+  
+              <div class="btn-login d-grid">
+                <button type="button" routerLink="/login" class="btn btn-primary-border btn-primary-outline mt-4">
+                  Login with Password
+                </button>
+                <br />
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col-md-6 px-0 d-none d-md-block">
+          <div class="bg-img">
+            <img src="../../assets/img/merce.jpg" alt="" class="img-fluid h-100vh w-100 of-cover" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
