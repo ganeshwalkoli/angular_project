@@ -5,6 +5,7 @@ pipeline {
 apiVersion: v1
 kind: Pod
 spec:
+  serviceAccountName: jenkins-admin
   containers:
   - name: build-tool
     image: ganeshwalkoli/ubuntu-build-tool:kubectl-v0.4
