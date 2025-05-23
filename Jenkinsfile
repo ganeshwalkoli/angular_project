@@ -82,7 +82,6 @@ spec:
       steps {
         sh '''
           kubectl set image deployment/nginx-app nginx-app=$FULL_IMAGE --namespace=default || kubectl apply -f k8s/deployment.yaml
-          kubectl apply -f k8s/service.yaml
         '''
       }
     }
