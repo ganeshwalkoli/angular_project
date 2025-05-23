@@ -7,7 +7,7 @@ kind: Pod
 spec:
   containers:
   - name: build-tool
-    image: ganeshwalkoli/ubuntu-build-tool:v0.3
+    image: ganeshwalkoli/ubuntu-build-tool:kubectl-v0.4
     command:
     - cat
     tty: true
