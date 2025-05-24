@@ -52,7 +52,7 @@ spec:
                 sonar-scanner \
                   -Dsonar.projectKey=base-nginx \
                   -Dsonar.sources=. \
-                  -Dsonar.inclusions=**/*.html
+                  -Dsonar.inclusions=**/*.html \
                   -Dsonar.host.url=$SONAR_HOST_URL \
                   -Dsonar.login=$SONAR_TOKEN \
                   -Dsonar.projectVersion=v1.0.$BUILD_NUMBER
