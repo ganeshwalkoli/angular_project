@@ -91,4 +91,18 @@ spec:
     }
   }
 }
+  post {
+  always {
+    echo 'This will always run, success or failure.'
+  }
+  success {
+    echo 'Pipeline succeeded!'
+  }
+  failure {
+    echo 'Pipeline failed.'
+  }
+  aborted {
+    echo 'Pipeline was aborted.'
+  }
+}
 
