@@ -45,17 +45,13 @@ spec:
         withSonarQubeEnv('SonarQube') {
           withCredentials([string(credentialsId: 'sonarqube-token', variable: 'SONAR_TOKEN')]) {
             sh '''
-              docker run --rm \
-                -v "$WORKSPACE:/usr/src" \
-                -w /usr/src \
-                sonarsource/sonar-scanner-cli \
-                sonar-scanner \
-                  -Dsonar.projectKey=base-nginx \
-                  -Dsonar.sources=. \
-                  -Dsonar.inclusions=**/*.html \
-                  -Dsonar.host.url=$SONAR_HOST_URL \
-                  -Dsonar.login=$SONAR_TOKEN \
-                  -Dsonar.projectVersion=v1.0.$BUILD_NUMBER
+              sonar-scanner \
+                -Dsonar.projectKey=base-nginx \
+                -Dsonar.sources=. \
+                -Dsonar.inclusions=**/*.html \
+                -Dsonar.host.url=$SONAR_HOST_URL \
+                -Dsonar.login=$SONAR_TOKEN \
+                -Dsonar.projectVersion=v1.0.$BUILD_NUMBER
             '''
           }
         }
