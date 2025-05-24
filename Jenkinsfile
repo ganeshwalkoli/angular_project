@@ -46,7 +46,7 @@ spec:
           withCredentials([string(credentialsId: 'sonarqube-token', variable: 'SONAR_TOKEN')]) {
             sh '''
               docker run --rm \
-                -v "$PWD:/usr/src" \
+                -v "$WORKSPACE:/usr/src" \
                 -w /usr/src \
                 sonarsource/sonar-scanner-cli \
                 sonar-scanner \
