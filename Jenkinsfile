@@ -58,6 +58,14 @@ spec:
       }
     }
 
+    stage('Quality Gate') {
+     steps {
+       timeout(time: 1, unit: 'MINUTES') {
+         waitForQualityGate abortPipeline: true
+       }
+     }
+   }
+
     stage('Build and Push Image') {
       steps {
         sh 'npm install'
